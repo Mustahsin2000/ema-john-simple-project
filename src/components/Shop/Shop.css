@@ -3,12 +3,12 @@
     grid-template-columns: 4fr 1fr;
 }
 .product-container{
-    background-color: rgb(183, 185, 185);
+    background-color: wheat;
     padding: 20px;
    
 }
 .cart-container{
-    background-color: rgb(211, 211, 112);
+    background-color: white;
     
 }
 .product-container{

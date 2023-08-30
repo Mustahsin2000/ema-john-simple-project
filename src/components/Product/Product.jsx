@@ -1,9 +1,13 @@
+/* eslint-disable react/prop-types */
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import './Product.css'
 const Product = (props) => {
+   
     // eslint-disable-next-line react/prop-types
     const {name,price,img,category,seller,ratings} = props.product
+    // eslint-disable-next-line react/prop-types
+    const handle = props.handleClick;
     return (
         <div className='product'> 
         <img src={img} alt="" />
@@ -14,7 +18,7 @@ const Product = (props) => {
             <p>seller: {seller}</p>
             <p>ratings: {ratings}</p>
             </div>
-            <button className='btn-cart'>Add to cart</button>
+            <button onClick={()=>handle(props.product)} className='btn-cart'>Add to cart</button>
         </div>
     );
 };
