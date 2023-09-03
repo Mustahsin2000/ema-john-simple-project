@@ -8,16 +8,21 @@ const Cart = (props) => {
 
     let totalPrice = 0;
     let toatalShipping = 0;
+    let quantity = 0;
     for(const product of cart){
-        totalPrice = totalPrice + product.price;
+        // if(product.quantity == 0){
+        //     product.quantity =1
+        // }
+        totalPrice = totalPrice + product.price * product.quantity;
         toatalShipping = toatalShipping + product.shipping
+        quantity = quantity + product.quantity;
     }
     const tex = totalPrice*7/100;
     const GrandTotal = totalPrice+toatalShipping+tex
     return (
         <div className='cart'>
             <h2>cart container</h2>
-                 <h4>Selected Items: {cart.length}</h4>
+                 <h4>Selected Items: {quantity}</h4>
                  <h5>Tottal Price: {totalPrice}</h5>
                  <h5>Shipping:{toatalShipping} </h5>
                  <h5>Tax:{tex.toFixed(2)} </h5>
